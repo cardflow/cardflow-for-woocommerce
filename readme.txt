@@ -1,7 +1,7 @@
 === Cardflow for WooCommerce ===
 Contributors:
 Tags: cardflow, cadeaubon, cadeaukaart, woocommerce, gift card, gift cards, voucher
-Text Domain: cardflow-woocommerce
+Text Domain: cardflow-plugin-woocommerce
 Requires at least: 5.4
 Tested up to: 5.8
 Stable tag: 1.0.0
