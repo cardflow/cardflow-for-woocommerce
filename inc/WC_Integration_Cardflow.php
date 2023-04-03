@@ -74,7 +74,7 @@ final class WC_Integration_Cardflow extends WC_Integration {
                 'title'       => __( 'API Key', 'cardflow-woocommerce' ),
                 'type'        => 'text',
                 'description' => __(
-                    'Enter your API Key. You can manage API-keys in your Cardflow dashboard under the Developer options.',
+                    'Enter your API Key. You can aks for your API-key at info@cardflow.nl.',
                     'cardflow-woocommerce'
                 ),
                 'default'     => ''
@@ -138,7 +138,7 @@ final class WC_Integration_Cardflow extends WC_Integration {
         }
 
         $gift_card = $this->get_gift_card( $gift_card_code );
-
+        
         if (
             $gift_card !== null &&
             $gift_card->getBalance() !== 0
@@ -521,9 +521,10 @@ final class WC_Integration_Cardflow extends WC_Integration {
         $cleanCode = GiftCard::cleanCode( $code );
         $gift_card = null;
 
-        if (( strlen( $cleanCode ) !== 9 )||( strlen( $cleanCode ) !== 10 )) {
+        if (( strlen( $cleanCode ) !== 9 )&&( strlen( $cleanCode ) !== 10 )) {
             return null;
         }
+
 
         if ( isset( $this->checkedCoupons[ $cleanCode ] ) ) {
             return $this->checkedCoupons[ $cleanCode ];

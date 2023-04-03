@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Cardflow for WooCommerce
- * Plugin URI: https://github.com/gardflow/plugin-woocommerce
+ * Plugin URI: https://github.com/cardflow/cardflow-for-woocommerce
  * Description: WordPress plugin for accepting Cardflow gift cards in your WooCommerce shop.
  * Domain Path: /languages
  * Version: 1.0.0
@@ -37,7 +37,6 @@ if ( ! class_exists( 'Cardflow_WooCommerce' ) ) {
             // Check if WooCommerce is installed
             if ( ! class_exists( 'WooCommerce' ) ) {
                 add_action( 'admin_notices', [ $this, 'notice_missing_wc_install' ] );
-
                 return;
             }
 
@@ -52,7 +51,6 @@ if ( ! class_exists( 'Cardflow_WooCommerce' ) ) {
 
         public function add_integration( array $integrations ): array {
             $integrations[] = \Cardflow\WooCommerce\WC_Integration_Cardflow::class;
-
             return $integrations;
         }
 
